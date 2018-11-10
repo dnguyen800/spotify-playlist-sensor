@@ -12,10 +12,9 @@ Home Assistant sensor that pulls the name, URI (unique request identifier), and 
 | client_id | string | **Required** | The Spotify client ID for the Spotify app you created earlier.
 | client_secret | string | **Required** | The Spotify client secret for the Spotify app you created earlier.
 | playlists | integer | 6 | Selects the x number of recent playlists. Most recent playlists start from the top to bottom in the Spotify app.
-| refresh_interval | integer | 3600 | Specify the interval (in seconds) to refresh playlists.
 
 ## Instructions
-1. Setup Spotify Developer account and follow directions from the Prerequisitie section of [Home Assistant website](https://www.home-assistant.io/components/media_player.spotify/) to create a Spotify app specifically for this sensor. Don't forget to fill out the redirect URI.
+1. Setup Spotify Developer account and follow directions from the Prerequisitie section of [Spotify Media Player component](https://www.home-assistant.io/components/media_player.spotify/) to create a Spotify app specifically for this sensor. Don't forget to fill out the redirect URI.
 2. Do not use the same client ID and secret from your existing Spotify media player component as they may conflict.
 3. Download the [spotify-playlist-sensor]https://raw.githubusercontent.com/dnguyen800/Spotify-Playlist-Sensor/master/spotify-playlist.py)
 4. Place the file in your `config/custom_components/sensor` folder
@@ -32,9 +31,16 @@ Home Assistant sensor that pulls the name, URI (unique request identifier), and 
 8. Locate the sensor in the Home Assistant UI, view more info and confirm your playlists are loaded.
 9. (Optional) Setup the [Spotify-Playlist-Card](https://raw.githubusercontent.com/dnguyen800/Spotify-Playlist/master/spotify-playlist-card.js) to make use of this sensor.
 
+## FAQ
+- How often does the sensor refresh?
+I set it to two minutes. You can change the SCAN_INTERVAL in the .py file to whatever you like.
+
+- After I finish authorizing in the Home Assistant UI, 
+
 ## Support
 I am studying Python as a hobby and this is my first public project. I hope you find it useful!
 
 ## Credits
   - [Spotify media player Home Assistant component](https://www.home-assistant.io/components/media_player.spotify/) - I re-used the token authorization code.
+  - [Feed Parser component](https://github.com/custom-components/sensor.feedparser) - Used as a starting point to write the playlist sensor. Thanks!
 
