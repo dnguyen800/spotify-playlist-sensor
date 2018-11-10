@@ -15,33 +15,25 @@ Home Assistant sensor that pulls the name, URI (unique request identifier), and 
 | refresh_interval | integer | 3600 | Specify the interval (in seconds) to refresh playlists.
 
 ## Instructions
-1. Setup Spotify Developer account and follow directions from the Prerequisitie section of Home Assistant website(https://www.home-assistant.io/components/media_player.spotify/) to create a Spotify app specifically for this sensor. Don't forget to fill out redirect URI.
-2. Do not use the same client ID and secret from your existing Spotify media player component.  They will conflict.
-3. 
-1. Download the [spotify-playlist-sensor]https://raw.githubusercontent.com/dnguyen800/Spotify-Playlist-Sensor/master/spotify-playlist.py)
-2. Place the file in your `config/custom_components/sensor` folder
-3. Include the sensor in your `configuration.yaml`
+1. Setup Spotify Developer account and follow directions from the Prerequisitie section of [Home Assistant website](https://www.home-assistant.io/components/media_player.spotify/) to create a Spotify app specifically for this sensor. Don't forget to fill out the redirect URI.
+2. Do not use the same client ID and secret from your existing Spotify media player component as they may conflict.
+3. Download the [spotify-playlist-sensor]https://raw.githubusercontent.com/dnguyen800/Spotify-Playlist-Sensor/master/spotify-playlist.py)
+4. Place the file in your `config/custom_components/sensor` folder
+5. Include the sensor in your `configuration.yaml`
 ```yaml
-- platform: spotifyplaylist
+- platform: spotify-playlist
   name: "Playlists"
   client_id: 'your_id'
   client_secret: 'your_secret'
 ```
 
-Reboot Home Assistant instance
-
-Check Notifications tab in Lovelace UI to finish authorizing with Spotify
-
-Find the sensor in Home Assistant and confirm your playlists are loaded.
-
-5. (Optional) Setup the [Spotify-Playlist-Card](https://raw.githubusercontent.com/dnguyen800/Spotify-Playlist/master/spotify-playlist-card.js)
-
-
-## FAQ
-
+6. Reboot Home Assistant instance to load the sensor.
+7. Check the Notifications tab in Lovelace UI to finish authorizing with Spotify
+8. Locate the sensor in the Home Assistant UI, view more info and confirm your playlists are loaded.
+9. (Optional) Setup the [Spotify-Playlist-Card](https://raw.githubusercontent.com/dnguyen800/Spotify-Playlist/master/spotify-playlist-card.js) to make use of this sensor.
 
 ## Support
-I am studying Python as a hobby and this is my first public project. 
+I am studying Python as a hobby and this is my first public project. I hope you find it useful!
 
 ## Credits
   - [Spotify media player Home Assistant component](https://www.home-assistant.io/components/media_player.spotify/) - I re-used the token authorization code.
