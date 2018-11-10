@@ -1,4 +1,5 @@
 # Spotify Playlist Sensor
+![playlist](images/playlist-playlist-no_title_no_name.PNG)
 Home Assistant sensor that pulls the name, URI (unique request identifier), and image URL from your current Spotify playlists. Use with [Spotify Playlist Card](https://github.com/dnguyen800/Spotify-Playlist-Card) to display playlist buttons on your Lovelace UI. Requires a Spotify Premium account.
 
 ## Features
@@ -33,12 +34,13 @@ Home Assistant sensor that pulls the name, URI (unique request identifier), and 
 
 ## FAQ
 - How often does the sensor refresh?
+
 I set it to two minutes. You can change the SCAN_INTERVAL in the .py file to whatever you like.
 
-- After I finish authorizing in the Home Assistant UI, 
+- After I finish authorizing in the Home Assistant UI, a blank screen pops up.
 
 ## Support
-I am studying Python as a hobby and this is my first public project. I hope you find it useful!
+I am studying Python as a hobby and this is my first public project. Some fixes/requests may be out of my scope but I'll try my best. I hope you find it useful!
 
 ## Credits
   - [Spotify Media Player Home Assistant component](https://www.home-assistant.io/components/media_player.spotify/) - I re-used the token authorization code.
