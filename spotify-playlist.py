@@ -1,7 +1,8 @@
 """
-Home Assistant component that loads user's Spotify playlists as a card in the UI
+Home Assistant component that loads user's Spotify playlists in a sensor.
 
-More details in these sentences.
+For more details, go to:
+https://github.com/dnguyen800/Spotify-Playlist-Sensor
 """
 
 
@@ -50,12 +51,10 @@ DEFAULT_CACHE_PATH = '.spotifyplaylist-token-cache'
 
 
 DOMAIN = 'spotifyplaylist'
-# DEPENDENCIES = ['http']
-
 
 ICON = 'mdi:spotify'
 
-SCAN_INTERVAL = timedelta(seconds=1000)
+SCAN_INTERVAL = timedelta(seconds=120)
 
 SCOPE = 'user-read-playback-state user-modify-playback-state user-read-private'
 
@@ -189,11 +188,14 @@ class SpotifyPlaylistSensor(Entity):
             return        
 
         # Execute code if token is available
-
         playlists = self._spotify.current_user_playlists(limit=self._number_of_playlists,
                                                 offset=self._offset)
         self._state = self._number_of_playlists
         
+        _LOGGER.info("clearing existing data in sensor")
+        self.hass.data[self._name] = {}
+
+        _LOGGER.info("updating playlists")
         for i,playlist in enumerate(playlists['items']):
             name = playlist['name']
             image = playlist['images'][0]['url']
