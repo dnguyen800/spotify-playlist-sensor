@@ -40,6 +40,8 @@ I set it to two minutes. You can change the SCAN_INTERVAL in the .py file to wha
 
 - After I finish authorizing in the Home Assistant UI, a blank screen pops up.
 
+Authorization should be complete and the sensor should be pulling data from Spotify now.
+
 ## Support
 I am studying Python as a hobby and this is my first public project. Some fixes/requests may be out of my scope but I'll try my best. I hope you find it useful!
 
