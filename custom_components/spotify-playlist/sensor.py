@@ -19,10 +19,10 @@ from homeassistant.components.switch import (PLATFORM_SCHEMA)
 from homeassistant.components.http import HomeAssistantView
 from homeassistant.core import callback
 
-
+DEPENDENCIES = ['http']
 REQUIREMENTS = ['spotipy-homeassistant==2.4.4.dev1']
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 _LOGGER = logging.getLogger(__name__)
 
 AUTH_CALLBACK_NAME = 'api:spotify'
@@ -44,17 +44,17 @@ CONFIGURATOR_SUBMIT_CAPTION = 'I authorized successfully'
 
 DEFAULT_NAME = 'SpotifyPlaylist'
 DEFAULT_NUMBER_OF_PLAYLISTS = 6
-DEPENDENCIES = ['http']
-DOMAIN = 'spotifyplaylist'
+
+DOMAIN = 'spotify-playlist'
 DEFAULT_OFFSET = 0
 DEFAULT_CACHE_PATH = '.spotifyplaylist-token-cache'
 
 
-DOMAIN = 'spotifyplaylist'
+DOMAIN = 'spotify-playlist'
 
 ICON = 'mdi:spotify'
 
-SCAN_INTERVAL = timedelta(seconds=120)
+SCAN_INTERVAL = timedelta(hours=1)
 
 SCOPE = 'user-read-playback-state user-modify-playback-state user-read-private'
 
