@@ -2,22 +2,19 @@
 
 [![GitHub Release][releases-shield]][releases]
 [![GitHub Activity][commits-shield]][commits]
-[![custom_updater][customupdaterbadge]][customupdater]
 [![License][license-shield]](LICENSE.md)
 
 ![Project Maintenance][maintenance-shield]
 
 
-_Component to integrate with [Spotify Playlist Card][Spotify-Playlist-Card]._
-
-Spotify Playlist sensor is a Home Assistant sensor that pulls the name, URI (unique request identifier), and image URL from your current Spotify playlists. Use with [Spotify Playlist Card](https://github.com/dnguyen800/Spotify-Playlist-Card) to display Spotify playlist buttons on your Lovelace UI. Requires a Spotify Premium account.
+_Component that pulls playlist data from your Spotify accounts. To integrate with [Spotify Playlist Card][Spotify-Playlist-Card]. Requires a Spotify Premium account._
 
 
 **This component will set up the following platforms.**
 
 Platform | Description
 -- | --
-`sensor` | Show Spotify playlists from Spotify user.
+`sensor` | Show Spotify playlist data from Spotify user.
 
 ![header][headerimg]
 
@@ -60,25 +57,14 @@ sensor:
     client_secret: 'your_secret'
 ```
 
-## Configuration options
-
-Key | Type | Required | Description
--- | -- | -- | --
-`username` | `string` | `False` | Username for the client.
-`password` | `string` | `False` | Password for the client.
-`binary_sensor` | `list` | `False` | Configuration for the `binary_sensor` platform.
-`sensor` | `list` | `False` | Configuration for the `sensor` platform.
-`switch` | `list` | `False` | Configuration for the `switch` platform.
-
-
 
 ### Configuration options for `sensor` list
 
 Key | Type | Required | Default | Description
 -- | -- | -- | -- | --
 
-`client_id` | `string` | `True` |  | The Spotify client ID for the Spotify app you created during instructions.
-`client_secret` | `string` | `True` |  | The Spotify client secret for the Spotify app you created during instructions.
+`client_id` | `string` | `True` |  `test` | The Spotify client ID for the Spotify app you created during instructions.
+`client_secret` | `string` | `True` | `test` | The Spotify client secret for the Spotify app you created during instructions.
 `name` | `string` | `False` | `SpotifyPlaylist` | Name of the sensor, such as `playlists`.
 `playlists` | `integer` | `False` | 6 | Selects the top x number of recent playlists. Most recent playlists start from the top to bottom in the Spotify app.
 
@@ -98,6 +84,7 @@ I am studying Python as a hobby and this is my first public project. Some fixes/
 ## Credits
   - [Spotify Media Player Home Assistant component](https://www.home-assistant.io/components/media_player.spotify/) - I re-used the token authorization code.
   - [Feed Parser component](https://github.com/custom-components/sensor.feedparser) - Used as a starting point to write the playlist sensor. Thanks!
+  - [Blueprint component](https://github.com/custom-components/blueprint) - Used to standardize HA component and card documentation.
 
 
 ## Contributions are welcome!
@@ -105,15 +92,13 @@ I am studying Python as a hobby and this is my first public project. Some fixes/
 If you want to contribute to this please read the [Contribution guidelines](CONTRIBUTING.md)
 
 ***
-
+[Spotify-Playlist-Card]: https://github.com/dnguyen800/Spotify-Playlist-Card
 [spotify-playlist]: https://github.com/dnguyen800/Spotify-Playlist-Sensor
 
 [commits-shield]: https://img.shields.io/github/commit-activity/y/dnguyen800/Spotify-Playlist-Sensor.svg
 [commits]: https://github.com/dnguyen800/Spotify-Playlist-Sensor/releases/commits/master
 [headerimg]: header.png
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
-[forum]: https://community.home-assistant.io/
-[license-shield]: https://img.shields.io/github/license/custom-components/blueprint.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/dnguyen800/Spotify-Playlist-Sensor.svg?style=for-the-badge
 [maintenance-shield]: https://img.shields.io/badge/maintainer-Dan%20Nguyen%20%40dnguyen800-blue.svg?style=for-the-badge
 [releases-shield]: https://img.shields.io/github/release/dnguyen800/Spotify-Playlist-Sensor.svg?style=for-the-badge
 [releases]: https://github.com/dnguyen800/Spotify-Playlist-Sensor/releases
