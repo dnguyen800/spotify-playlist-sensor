@@ -56,7 +56,7 @@ ICON = 'mdi:spotify'
 
 SCAN_INTERVAL = timedelta(hours=1)
 
-SCOPE = 'user-read-playback-state user-modify-playback-state user-read-private'
+SCOPE = 'user-read-playback-state user-modify-playback-state user-read-private playlist-read-private'
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_CLIENT_ID): cv.string,
