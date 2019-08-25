@@ -7,7 +7,9 @@
 ![Project Maintenance][maintenance-shield]
 
 
-_Component that pulls playlist data from your Spotify accounts. To integrate with [Spotify Playlist Card][Spotify-Playlist-Card]. Requires a Spotify Premium account._
+This is a Home Assistant Component that pulls playlist data from your Spotify accounts. To integrate with [Spotify Playlist Card][Spotify-Playlist-Card]. Requires a Spotify Premium account.
+
+Please note I am not actively updating this sensor anymore. I recommend using [spotify-card](https://github.com/custom-cards/spotify-card) by user @fondberg for a much better Lovelace card implementation (and no need for a separate Spotify sensor). I'll update this sensor for small changes and for programming practice.
 
 
 **This component will set up the following platforms.**
@@ -71,6 +73,10 @@ Key | Type | Required | Default | Description
 
 
 ## FAQ
+- I previously used this sensor and I don't see my curated playlists (e.g. Discovery Weekly, Release Radar) created by others. Is this fixed?
+
+The scope used to communicate with Spotify API was updated with release v0.1.1. Delete the `.spotifyplaylist-token-cache` and re-authenticate again to get a proper token. Thanks to user @bretteldridge for pointing this out.
+
 - How often does the sensor refresh?
 
 I set it to two minutes. You can change the SCAN_INTERVAL in the ``sensor.py`` file to whatever you like.
