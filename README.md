@@ -62,11 +62,12 @@ sensor:
 
 Key | Type | Required | Default | Description
 -- | -- | -- | -- | --
-
 `client_id` | `string` | `True` |  `test` | The Spotify client ID for the Spotify app you created during instructions.
 `client_secret` | `string` | `True` | `test` | The Spotify client secret for the Spotify app you created during instructions.
 `name` | `string` | `False` | `SpotifyPlaylist` | Name of the sensor, such as `playlists`.
-`playlists` | `integer` | `False` | 6 | Selects the top x number of recent playlists. Most recent playlists start from the top to bottom in the Spotify app.
+`number_of_playlists` | `integer` | `False` | 6 | Selects the top x number of recent playlists. Most recent playlists start from the top to bottom in the Spotify app.
+`offset` | `integer` | `False` | 0 | The index of the first playlist to return. Default: 0 (the first object). Maximum offset: 100.000.
+
 
 
 ## FAQ
