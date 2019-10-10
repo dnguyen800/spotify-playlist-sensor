@@ -1,0 +1,6 @@
+{
+  "name": "Spotify Playlist Sensor",
+  "domains": ["sensor"],
+  "homeassistant": "0.92.0",
+  "iot_class": "Cloud Polling"
+}
