@@ -198,7 +198,10 @@ class SpotifyPlaylistSensor(Entity):
         _LOGGER.info("updating playlists")
         for i,playlist in enumerate(playlists['items']):
             name = playlist['name']
-            image = playlist['images'][0]['url']
+            try: 
+                image = playlist['images'][0]['url']
+            except:
+                image = ''
             uri = playlist['uri']
             id = i
             self.hass.data[self._name][name] = {}
