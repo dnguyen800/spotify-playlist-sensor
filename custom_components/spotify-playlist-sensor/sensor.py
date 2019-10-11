@@ -2,7 +2,7 @@
 Home Assistant component that loads user's Spotify playlists in a sensor.
 
 For more details, go to:
-https://github.com/dnguyen800/Spotify-Playlist-Sensor
+https://github.com/dnguyen800/spotify-playlist-sensor
 """
 
 
@@ -42,15 +42,15 @@ CONFIGURATOR_LINK_NAME = 'Link Spotify account'
 CONFIGURATOR_SUBMIT_CAPTION = 'I authorized successfully'
 
 
-DEFAULT_NAME = 'SpotifyPlaylist'
+DEFAULT_NAME = "Spotify Playlist"
 DEFAULT_NUMBER_OF_PLAYLISTS = 6
 
-DOMAIN = 'spotify-playlist'
+DOMAIN = 'spotify-playlist-sensor'
 DEFAULT_OFFSET = 0
-DEFAULT_CACHE_PATH = '.spotifyplaylist-token-cache'
+DEFAULT_CACHE_PATH = '.spotify-playlist-token-cache'
 
 
-DOMAIN = 'spotify-playlist'
+DOMAIN = 'spotify-playlist-sensor'
 
 ICON = 'mdi:spotify'
 
