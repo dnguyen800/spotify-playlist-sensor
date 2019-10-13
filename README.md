@@ -20,41 +20,57 @@ Platform | Description
 
 ![header][headerimg]
 
-## Installation
+## HACS Installation
 
+1. Include this repository as a custom integration in the HACS settings.
+
+```yaml
+https://github.com/dnguyen800/spotify-playlist-sensor
+```
+
+2. If added correctly, the repository should be listed like below:
+
+![hacs][hacs-image]
+
+## Manual Installation
+
+1. Access the HA config directory (where you find `configuration.yaml`).
+2. If you do not have a `custom_components` directory (folder) there, you need to create it.
+3. In the `custom_components` directory (folder) create a new folder called `spotify-playlist-sensor`.
+4. Download _all_ the files from the `custom_components/spotify-playlist-sensor/` directory (folder) in this repository.
+5. Place the files you downloaded in the new directory (folder) you created.
+
+Your HA configuration directory (folder) should have the following files:
+
+```text
+custom_components/spotify-playlist-sensor/__init__.py
+custom_components/spotify-playlist-sensor/manifest.json
+custom_components/spotify-playlist-sensor/sensor.py
+```
+
+## Configuration
 1. Setup Spotify Developer account and follow directions from the Prerequisite section of [Spotify Media Player component](https://www.home-assistant.io/components/media_player.spotify/) to create a Spotify app specifically for this sensor. Don't forget to fill out the redirect URI.
-- Do not use the same client ID and secret from your existing Spotify media player component as they may conflict.
-2. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
-3. If you do not have a `custom_components` directory (folder) there, you need to create it.
-4. In the `custom_components` directory (folder) create a new folder called `spotify-playlist`.
-5. Download _all_ the files from the `custom_components/spotify-playlist/` directory (folder) in this repository.
-6. Place the files you downloaded in the new directory (folder) you created.
-7. Add the sensor in your `configuration.yaml`
+
+2. Add the sensor in your `configuration.yaml`
 ```yaml
 sensor:
-  - platform: spotify-playlist
+  - platform: spotify-playlist-sensor
     client_id: 'your_id'
     client_secret: 'your_secret'
 ```
-8. Restart Home Assistant.
-9. Check the Notifications tab in Lovelace UI to finish Spotify authorization.
-10. Locate the sensor in the Home Assistant UI, view ``more info`` and confirm your playlists are loaded.
-11. (Optional) Setup the [Spotify-Playlist-Card](https://github.com/dnguyen800/Spotify-Playlist-Card) to make use of this sensor.
+3. Restart Home Assistant.
+4. Check the Notifications tab in Lovelace UI to finish Spotify authorization.
+5. Locate the sensor in the Home Assistant UI, view ``more info`` and confirm your playlists are loaded.
+6. (Optional) Setup the [Spotify-Playlist-Card](https://github.com/dnguyen800/spotify-playlist-card) to make use of this sensor.
 
 
-Using your HA configuration directory (folder) as a starting point you should now also have this:
 
-```text
-custom_components/spotify-playlist/__init__.py
-custom_components/spotify-playlist/manifest.json
-custom_components/spotify-playlist/sensor.py
-```
 
 ## Example configuration.yaml
 
 ```yaml
 sensor:
-  - platform: spotify-playlist
+  - platform: spotify-playlist-sensor
     client_id: 'your_id'
     client_secret: 'your_secret'
 ```
@@ -99,6 +115,7 @@ I am studying Python as a hobby and this is my first public project. Some fixes/
 If you want to contribute to this please read the [Contribution guidelines](CONTRIBUTING.md)
 
 ***
+[hacs-image]: images/hacs.png
 [Spotify-Playlist-Card]: https://github.com/dnguyen800/Spotify-Playlist-Card
 [spotify-playlist]: https://github.com/dnguyen800/Spotify-Playlist-Sensor
 
